@@ -1,0 +1,34 @@
+<!-- formulario.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Acceso por MAC</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2 class="mt-5">Control de Acceso por MAC</h2>
+        <form action="/control_mac" method="post" class="mt-4">
+            <div class="form-group">
+                <label for="mac_address">Dirección MAC:</label>
+                <input type="text" class="form-control" id="mac_address" name="mac_address" placeholder="Formato: 10:51:07:7c:14:b5">
+            </div>
+            <div class="form-group">
+                <label for="action">Acción:</label>
+                <select class="form-control" id="action" name="action">
+                    <option value="permitir">Permitir</option>
+                    <option value="denegar">Denegar</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

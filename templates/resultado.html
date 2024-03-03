@@ -1,0 +1,62 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Control de Acceso SSH</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <div class="row justify-content-center"><!-- index.html -->
+  
+      
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header bg-primary text-white">
+            <h3 class="text-center">Control de Acceso SSH</h3>
+          </div>
+          <div class="card-body">
+            <form id="control-ssh-form" action="/control_ssh" method="POST">
+              <div class="form-group">
+                <label for="ip_destino">Dirección IP de Destino:</label>
+                <input type="text" class="form-control" id="ip_destino" name="ip_destino" placeholder="Ejemplo: 10.0.9.101">
+              </div>
+              <div class="form-group">
+                <label for="accion">Acción:</label>
+                <select class="form-control" id="accion" name="accion">
+                  <option value="permitir">Permitir</option>
+                  <option value="denegar">Denegar</option>
+                </select>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary">Enviar</button>
+                <img id="loading-image" src="https://cdnjs.cloudflare.com/ajax/libs/galleriffic/2.0.1/css/loader.gif" style="display:none;">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Custom JavaScript -->
+  <script>
+    $(document).ready(function() {
+      $('#control-ssh-form').submit(function() {
+        $('#loading-image').show(); // Mostrar el "loading" al enviar el formulario
+        setTimeout(function() {
+          location.reload(); // Recargar la página después de 2 segundos (ajustar según necesites)
+        }, 2000); // 2000 milisegundos = 2 segundos
+      });
+    });
+  </script>
+</body>
+</html>
